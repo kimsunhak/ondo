@@ -4,3 +4,6 @@
 
 1. 공공데이터 포털에 API를 사용하여 날씨를 제공
 2. OpenWeatherMap API를 사용하여 실시간 시간대 온도를 제공
+
+
+![날씨](ondo.png)
