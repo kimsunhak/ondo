@@ -22,7 +22,7 @@ def dsmTest():
 
     # 공공데이터 API
     apiUrl = 'http://apis.data.go.kr/1360000/TourStnInfoService/getTourStnVilageFcst'
-    key = unquote('FqafH8mStSoLSHj4Muzv0tHZ76RczPq5lkbH%2FkfN4XVCK7gko2SO6ZvYLrw9NeLIABSeJYmf8VFHBVB2G7dNDw%3D%3D')
+    key = unquote('API인증키값')
     queryParams = '?' + urlencode({ quote_plus('ServiceKey') : key, quote_plus('pageNo') : '1', quote_plus('numOfRows') : '1', quote_plus('dataType') : 'JSON', quote_plus('CURRENT_DATE') : nowTime , quote_plus('HOUR') : '1', quote_plus('COURSE_ID') : '53' })
     request = Request(apiUrl + queryParams)
     request.get_method = lambda: 'GET'
@@ -40,7 +40,7 @@ def dsmTest():
 
     # openWeather API
     weathreApiUrl = 'http://api.openweathermap.org/data/2.5/weather'
-    weathreApiKey = unquote('835e3cffb5f0b27e8e3bcce876722503')
+    weathreApiKey = unquote('API인증키값')
     queryParams = '?' + urlencode({ quote_plus('q') : 'Seoul', quote_plus('appid') : weathreApiKey })
     weatherRequest = Request(weathreApiUrl + queryParams)
     weatherRequest.get_method = lambda: 'GET'
@@ -73,7 +73,7 @@ def dsmTest():
     string = '오늘의 날씨는 ' + skyCondition + '\n' + '현재 기온은 ' + str(lastOndo) + '℃' + '\n' + '일 평균 3시간 기온은 ' + str(temper) + '℃ 입니다'
     payload =  {'text': string}
     json_string = json.dumps(payload)
-    params = {'api' : 'SYNO.Chat.External', 'method' : 'incoming', 'version' : '2', 'token' : 'kRdC6h0ZPbtsPoYnqKJRFgg3ZIGrjqhGENTtYmF6z3BcGFLlmdeBBLrEzf79jph5', 'payload' : json_string }
+    params = {'api' : 'SYNO.Chat.External', 'method' : 'incoming', 'version' : '2', 'token' : '토큰값', 'payload' : json_string }
     res = requests.get(host, params=params)
     # jsonData = json.loads(res.content.decode('utf-8'))
     return res
